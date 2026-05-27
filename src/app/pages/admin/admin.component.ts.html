@@ -1,0 +1,45 @@
+<app-header-admin></app-header-admin>
+
+<div class="admin-container">
+  <h2>Gerenciamento de Produtos</h2>
+  <button class="btn-add-product">+ Adicionar Novo Produto</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Produto</th>
+        <th>Preço</th>
+        <th>Estoque</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (product of products; track product.id) {
+        @if (editing() && editing()!.id === product.id) {
+          <tr class="editing-row">
+            <td>#{{ product.id }}</td>
+            <td><input [(ngModel)]="editing()!.name" name="name"></td>
+            <td><input type="number" [(ngModel)]="editing()!.price" name="price"></td>
+            <td><input type="number" [(ngModel)]="editing()!.stock" name="stock"></td>
+            <td>
+              <button class="btn-save" (click)="saveEdit()">Salvar</button>
+              <button class="btn-cancel" (click)="cancelEdit()">Cancelar</button>
+            </td>
+          </tr>
+        } @else {
+          <tr>
+            <td>#{{ product.id.toString().padStart(3, '0') }}</td>
+            <td>{{ product.name }}</td>
+            <td>R$ {{ product.price | number:'1.2-2' }}</td>
+            <td>{{ product.stock }} unidades</td>
+            <td>
+              <button class="btn-edit" (click)="startEdit(product)">Editar</button>
+              <button class="btn-delete" (click)="delete(product.id)">Excluir</button>
+            </td>
+          </tr>
+        }
+      }
+    </tbody>
+  </table>
+</div>

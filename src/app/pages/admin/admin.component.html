@@ -1,0 +1,93 @@
+<app-header-admin></app-header-admin>
+
+<div class="admin-container">
+  <h2>Gerenciamento de Produtos</h2>
+  <button class="btn-add-product" (click)="openModal()">+ Adicionar Novo Produto</button>
+
+  @if (loading()) {
+    <p class="state-msg">Carregando produtos...</p>
+  }
+
+  @if (error()) {
+    <p class="state-msg error">{{ error() }}</p>
+  }
+
+  @if (!loading() && !error()) {
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th>Estoque</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (product of products(); track product.id) {
+          @if (editing() && editing()!.id === product.id) {
+            <tr class="editing-row">
+              <td>#{{ product.id }}</td>
+              <td><input [(ngModel)]="editing()!.name" name="name" placeholder="Nome do produto"></td>
+              <td><input type="number" [(ngModel)]="editing()!.price" name="price" placeholder="Preço"></td>
+              <td><input type="number" [(ngModel)]="editing()!.stock" name="stock" placeholder="Estoque"></td>
+              <td>
+                <button class="btn-save" (click)="saveEdit()">Salvar</button>
+                <button class="btn-cancel" (click)="cancelEdit()">Cancelar</button>
+              </td>
+            </tr>
+          } @else {
+            <tr>
+              <td>#{{ product.id.toString().padStart(3, '0') }}</td>
+              <td>{{ product.name }}</td>
+              <td>R$ {{ product.price | number:'1.2-2' }}</td>
+              <td>{{ product.stock }} unidades</td>
+              <td>
+                <button class="btn-edit" (click)="startEdit(product)">Editar</button>
+                <button class="btn-delete" (click)="delete(product.id)">Excluir</button>
+              </td>
+            </tr>
+          }
+        }
+      </tbody>
+    </table>
+  }
+</div>
+
+<!-- Modal: Adicionar Produto -->
+@if (showModal()) {
+  <div class="modal-overlay" (click)="closeModal()">
+    <div class="modal" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h3>Novo Produto</h3>
+        <button class="modal-close" (click)="closeModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="new-name">Nome do produto</label>
+          <input id="new-name" type="text" [(ngModel)]="newProduct.name"
+            name="new-name" placeholder="Ex: Whey Protein 1kg">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="new-price">Preço (R$)</label>
+            <input id="new-price" type="number" [(ngModel)]="newProduct.price"
+              name="new-price" placeholder="0,00" min="0" step="0.01">
+          </div>
+          <div class="form-group">
+            <label for="new-stock">Estoque</label>
+            <input id="new-stock" type="number" [(ngModel)]="newProduct.stock"
+              name="new-stock" placeholder="0" min="0">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-cancel" (click)="closeModal()">Cancelar</button>
+        <button class="btn-save" (click)="saveNew()"
+          [disabled]="!newProduct.name.trim() || newProduct.price <= 0">
+          Adicionar produto
+        </button>
+      </div>
+    </div>
+  </div>
+}
