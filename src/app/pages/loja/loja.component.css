@@ -1,0 +1,91 @@
+/* ── Hero da loja ── */
+.loja-hero {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1d24 60%, #003d4d 100%);
+  padding: 56px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.loja-hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 64px;
+  color: #fff;
+  letter-spacing: 3px;
+  line-height: 1;
+}
+.loja-hero h1 span { color: #00e5a0; }
+.loja-hero p { color: rgba(255,255,255,0.55); font-size: 15px; margin-top: 12px; }
+
+/* ── Filtros ── */
+.filtros-bar {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 16px 80px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 50;
+}
+.filtro-btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1.5px solid #e5e7eb;
+  background: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filtro-btn:hover, .filtro-btn.ativo {
+  background: #0a0a0a;
+  color: #fff;
+  border-color: #0a0a0a;
+}
+.filtros-bar .total {
+  margin-left: auto;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ── Seção de produtos ── */
+.loja-grid-section {
+  padding: 48px 80px;
+}
+.loja-secao-titulo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  letter-spacing: 2px;
+  color: #0a0a0a;
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e5e7eb;
+}
+.loja-secao-titulo span {
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  color: #00b37e;
+  letter-spacing: 0;
+  margin-left: 12px;
+}
+
+/* ── Animação do modal ── */
+@keyframes modalEntrar {
+  from { opacity:0; transform:scale(0.95) translateY(12px); }
+  to { opacity:1; transform:scale(1) translateY(0); }
+}
+
+/* ── Responsivo ── */
+@media (max-width: 900px) {
+  .loja-hero { padding: 40px 24px; }
+  .filtros-bar { padding: 12px 24px; }
+  .loja-grid-section { padding: 32px 24px; }
+}
+@media(max-width:640px) {
+  #produtoModalBox { grid-template-columns: 1fr !important; }
+}

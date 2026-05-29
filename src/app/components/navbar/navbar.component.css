@@ -1,0 +1,60 @@
+.navbar {
+  position: sticky; top: 0; z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+.nav-border {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #22c55e 0%, #38bdf8 50%, #6366f1 100%);
+}
+.logo { display: flex; align-items: center; text-decoration: none; }
+.logo-image { width: 150px; height: auto; object-fit: contain; display: block; }
+
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a {
+  text-decoration: none; color: #0a0a0a; font-weight: 500;
+  font-size: 14px; letter-spacing: 0.5px;
+  display: flex; align-items: center; gap: 4px; transition: color 0.2s;
+}
+.nav-links a:hover { color: #16a34a; }
+
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+
+.search-bar {
+  display: flex; align-items: center;
+  background: #f5f5f3; border: 1px solid #e5e7eb;
+  border-radius: 24px; padding: 8px 16px; gap: 8px;
+}
+.search-bar input {
+  border: none; background: transparent; outline: none;
+  font-family: 'DM Sans', sans-serif; font-size: 13px; width: 160px; color: #0a0a0a;
+}
+.search-bar svg { color: #6b7280; }
+
+.btn-icon {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid #e5e7eb; background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: #0a0a0a; transition: all 0.2s; position: relative;
+}
+.btn-icon:hover { background: #f5f5f3; }
+.btn-icon[data-count]::after {
+  content: attr(data-count);
+  position: absolute; top: -8px; right: -8px;
+  width: 20px; height: 20px; background: #ef4444;
+  border-radius: 50%; color: white; font-size: 11px;
+  font-weight: 700; display: flex; align-items: center; justify-content: center;
+  border: 2px solid white;
+}
+
+.cart-overlay {
+  display: none; position: fixed; inset: 0; z-index: 999;
+  background: transparent; pointer-events: none; transition: background 0.3s;
+}
+.cart-overlay.active {
+  display: block; background: rgba(0,0,0,0.4); pointer-events: auto;
+}

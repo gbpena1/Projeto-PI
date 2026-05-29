@@ -1,0 +1,92 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Creatina Monohidratada — Pote 300g",
+      "price": 75.9,
+      "oldPrice": 89.9,
+      "discount": 16,
+      "image": "assets/creatina.png",
+      "rating": 5,
+      "reviews": 5418,
+      "stock": 43
+    },
+    {
+      "id": 2,
+      "name": "FreshWhey™ Chocolate e Avelã — Pote 900g",
+      "price": 332.9,
+      "oldPrice": 362.9,
+      "discount": 8,
+      "image": "assets/fresh_whey.png",
+      "rating": 5,
+      "reviews": 11897,
+      "stock": 12
+    },
+    {
+      "id": 3,
+      "name": "Protein Bar — 3 Unidades",
+      "price": 36.3,
+      "oldPrice": 41.7,
+      "discount": 13,
+      "image": "assets/protein_bar.jpg",
+      "rating": 5,
+      "reviews": 1439,
+      "stock": 80
+    },
+    {
+      "id": 4,
+      "name": "Whey Protein Concentrado — Pote 450g",
+      "price": 145.9,
+      "oldPrice": 148.9,
+      "discount": 2,
+      "image": "assets/whey_concentrado.png",
+      "rating": 5,
+      "reviews": 25683,
+      "stock": 30
+    },
+    {
+      "id": 5,
+      "name": "Duo Creatina Monohidratada 300g",
+      "price": 144.21,
+      "oldPrice": 253.8,
+      "discount": 43,
+      "image": "assets/duo_creatina.png",
+      "rating": 4,
+      "reviews": 840,
+      "stock": 20
+    },
+    {
+      "id": 6,
+      "name": "Whey Protein 900g + Creatina 300g",
+      "price": 306.66,
+      "oldPrice": 379.8,
+      "discount": 19,
+      "image": "assets/whey_creatina.png",
+      "rating": 4,
+      "reviews": 840,
+      "stock": 15
+    },
+    {
+      "id": 7,
+      "name": "Kit Performance",
+      "price": 410.11,
+      "oldPrice": 622.69,
+      "discount": 34,
+      "image": "assets/kit_performance.png",
+      "rating": 5,
+      "reviews": 1,
+      "stock": 5
+    },
+    {
+      "id": 8,
+      "name": "Kit 12 whey protein shake",
+      "price": 234.9,
+      "oldPrice": 297.35,
+      "discount": 21,
+      "image": "assets/whey_protein_shake.png",
+      "rating": 4,
+      "reviews": 312,
+      "stock": 10
+    }
+  ]
+}

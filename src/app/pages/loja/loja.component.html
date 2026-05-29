@@ -1,0 +1,67 @@
+  <!-- Navbar -->
+  <app-navbar></app-navbar>
+    
+  <!-- Hero -->
+  <div class="loja-hero">
+    <div>
+      <h1>Nossa <span>Loja</span></h1>
+      <p>Todos os produtos Flow Sup em um só lugar. Qualidade certificada, entrega rápida.</p>
+    </div>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;">
+      <div style="text-align:center;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:#00e5a0;letter-spacing:2px;">+80</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;">Produtos</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:#00e5a0;letter-spacing:2px;">100%</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;">Certificados</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:#00e5a0;letter-spacing:2px;">12x</div>
+        <div style="font-size:12px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;">Sem juros</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grid -->
+  <!-- Grid -->
+<section class="loja-grid-section">
+  <div class="loja-secao-titulo">Todos os Produtos <span>Flow Sup</span></div>
+
+  <!-- Carregando -->
+  <div *ngIf="carregando" style="text-align:center; padding:80px 0; color:#6b7280;">
+    <p style="font-size:16px;">Carregando produtos...</p>
+  </div>
+
+  <!-- Grid de produtos -->
+  <div class="products-grid" id="produtosGrid" *ngIf="!carregando">
+    <div class="product-card" *ngFor="let produto of produtosFiltrados">
+      <div class="product-badge">{{ produto.discount }}% OFF</div>
+      <div class="product-img">
+        <div class="product-img-bg" style="background:#fff"></div>
+        <img [src]="produto.image" class="product-img-item" style="object-fit:contain;padding:12px;">
+      </div>
+      <div class="product-info">
+        <div class="product-name">{{ produto.name }}</div>
+        <div class="stars">
+          <span>★★★★★</span>
+          <small>({{ produto.reviews }})</small>
+        </div>
+        <div class="price-row">
+          <span class="price-old">R$ {{ produto.oldPrice.toFixed(2).replace('.', ',') }}</span>
+          <span class="price-new">R$ {{ produto.price.toFixed(2).replace('.', ',') }}</span>
+        </div>
+        <button class="btn-add" (click)="addToCart(produto)">Adicionar ao carrinho</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sem resultados -->
+  <div *ngIf="!carregando && produtosFiltrados.length === 0"
+    style="text-align:center; padding:80px 0; color:#6b7280;">
+    <div style="font-size:48px; margin-bottom:16px;">🔍</div>
+    <p style="font-size:16px; font-weight:600;">Nenhum produto encontrado</p>
+    <p style="font-size:14px; margin-top:4px;">Tente outro termo ou categoria</p>
+  </div>
+</section>
+

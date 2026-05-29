@@ -1,0 +1,96 @@
+<!-- <div class="login-page">
+  <div class="login-container">
+    <h2>Login</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" type="text" placeholder="Digite seu email" [(ngModel)]="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input id="senha" type="password" placeholder="Digite sua senha" [(ngModel)]="senha" name="senha" required>
+      </div>
+      @if (erro) {
+        <p class="error-msg">{{ erro }}</p>
+      }
+      <button type="submit">Entrar</button>
+    </form>
+    <div class="extra">
+      <p><a href="#">Esqueci minha senha</a></p>
+      <p>Não tem conta? <a routerLink="/cadastro">Cadastre-se</a></p>
+    </div>
+  </div>
+</div> -->
+<app-navbar></app-navbar> 
+ 
+<div class="login-page">
+  <div class="login-split">
+ 
+    <!-- Lado esquerdo: visual -->
+    <div class="login-visual">
+      <div class="visual-content">
+        <div class="visual-tag">BEM-VINDO DE VOLTA</div>
+        <h2 class="visual-headline">Sua jornada<br>continua aqui.</h2>
+        <p class="visual-sub">Acesse sua conta e continue evoluindo com os melhores suplementos do mercado.</p>
+        <div class="visual-badges">
+          <span class="badge">✓ Frete grátis acima de R$299</span>
+          <span class="badge">✓ Qualidade certificada</span>
+          <span class="badge">✓ Entrega expressa</span>
+        </div>
+      </div>
+      <div class="visual-decoration"></div>
+    </div>
+ 
+    <!-- Lado direito: formulário -->
+    <div class="login-form-side">
+      <div class="login-card">
+        <div class="card-header">
+          <span class="card-tag">ACESSO</span>
+          <h1 class="card-title">Entrar na conta</h1>
+          <p class="card-subtitle">Não tem conta? <a routerLink="/cadastro" class="link-accent">Cadastre-se grátis →</a></p>
+        </div>
+ 
+        <form (ngSubmit)="onSubmit()" class="login-form">
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              <input id="email" type="email" placeholder="seu@email.com" [(ngModel)]="email" name="email" required>
+            </div>
+          </div>
+ 
+          <div class="form-group">
+            <label for="senha">
+              Senha
+              <a href="#" class="forgot-link">Esqueci minha senha</a>
+            </label>
+            <div class="input-wrapper">
+              <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              <input id="senha" type="password" placeholder="••••••••" [(ngModel)]="senha" name="senha" required>
+            </div>
+          </div>
+ 
+          @if (erro) {
+            <div class="error-msg">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              {{ erro }}
+            </div>
+          }
+ 
+          <button type="submit" class="btn-submit">
+            Entrar na conta →
+          </button>
+        </form>
+      </div>
+    </div>
+ 
+  </div>
+</div>
+ 
+<app-footer></app-footer>

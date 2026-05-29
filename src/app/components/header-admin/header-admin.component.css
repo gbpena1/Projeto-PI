@@ -1,0 +1,10 @@
+.admin-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 5%; background: #fff; border-bottom: 2px solid #00ff88;
+}
+.logo { font-weight: 700; font-size: 18px; letter-spacing: 1px; }
+.btn-logout {
+  background: none; border: 1px solid #ccc; padding: 8px 16px;
+  border-radius: 6px; cursor: pointer; font-size: 14px; transition: all 0.2s;
+}
+.btn-logout:hover { background: #f5f5f3; }

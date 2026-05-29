@@ -1,0 +1,193 @@
+  <!-- Navbar -->
+  <nav class="navbar" style="position:relative">
+    <div class="nav-border"></div>
+    <a routerLink="/" class="logo">
+      <img src="assets/logo.png" alt="FLOW SUP" class="logo-image">
+    </a>
+    <div class="nav-links">
+      <a routerLink="/loja">LOJA</a>
+      <a routerLink="/lancamentos" style="color:#00b37e; font-weight:700;">LANÇAMENTOS</a>
+      <a routerLink="/sobre">SOBRE NÓS</a>
+    </div>
+    <div class="nav-actions">
+      <div class="search-bar">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+        <input type="text" placeholder="Buscar produtos...">
+      </div>
+      <button class="btn-icon" (click)="irParaLogin()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+        </svg>
+      </button>
+      <button class="btn-icon" id="cart-btn" (click)="toggleCart()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="lanc-hero">
+    <div class="lanc-hero-text">
+      <div class="lanc-hero-tag">Novidades Flow Sup</div>
+      <h1>O que chegou<br><span>agora.</span></h1>
+      <p>Fórmulas desenvolvidas com o que há de mais avançado em ciência do esporte. Seja o primeiro a experimentar.</p>
+    </div>
+  </section>
+
+  <!-- Countdown -->
+  <div class="countdown-bar">
+    <span class="countdown-label">Próximo lançamento em</span>
+    <div class="countdown-timer">
+      <div class="countdown-unit"><span class="countdown-num" id="dias">00</span><span class="countdown-sub">dias</span></div>
+      <span class="countdown-sep">:</span>
+      <div class="countdown-unit"><span class="countdown-num" id="horas">00</span><span class="countdown-sub">horas</span></div>
+      <span class="countdown-sep">:</span>
+      <div class="countdown-unit"><span class="countdown-num" id="minutos">00</span><span class="countdown-sub">min</span></div>
+      <span class="countdown-sep">:</span>
+      <div class="countdown-unit"><span class="countdown-num" id="segundos">00</span><span class="countdown-sub">seg</span></div>
+    </div>
+  </div>
+
+  <!-- Destaque principal -->
+  <div class="lanc-destaque">
+    <div class="lanc-destaque-text">
+      <span class="lanc-novo-badge">🔥 Novo</span>
+      <h2>FreshWhey™<br>Edição Limitada<br>Caramel Latte</h2>
+      <p>O sabor mais pedido pela comunidade finalmente chegou. FreshWhey™ com blend triplo na versão Caramel Latte — cremoso, aromático e com o mesmo padrão de qualidade que você já conhece.</p>
+      <div class="lanc-destaque-preco">
+        <span class="preco-novo">R$ 319,90</span>
+        <span class="preco-velho">R$ 362,90</span>
+        <span class="preco-badge">12% OFF</span>
+      </div>
+      <button class="btn-lanc" (click)="abrirProduto({nome:'FreshWhey™ Caramel Latte — Edição Limitada 900g',img:'assets/fresh_whey.png',precoOld:'R$ 362,90',precoNew:'R$ 319,90',badge:'NOVO',stars:'★★★★★',reviews:'312',desc:'O sabor mais pedido pela comunidade finalmente chegou. FreshWhey™ Caramel Latte reúne o blend triplo Concentrado + Isolado + Hidrolisado em uma experiência sensorial única. Cremoso, aromático, zero açúcar.',beneficios:['Blend triplo premium','26g de proteína por dose','Sabor inédito Caramel Latte','Edição limitada — estoque restrito'],info:'Edição Limitada 900g | 30 doses | Disponível enquanto durar o estoque'})">
+        Garantir agora →
+      </button>
+    </div>
+    <div class="lanc-destaque-img">
+      <img src="assets/fresh_whey.png" alt="FreshWhey Caramel Latte">
+    </div>
+  </div>
+
+  <!-- Grade de lançamentos -->
+  <section class="lanc-section">
+    <h2 class="lanc-section-titulo">Lançamentos de Maio</h2>
+    <div class="products-grid">
+
+      <!-- Card 1 — Novo -->
+      <div class="lanc-card" (click)="abrirProduto({nome:'Creatina Micronizada Flow Sup — 300g',img:'assets/creatina.png',precoOld:'R$ 99,90',precoNew:'R$ 84,90',badge:'NOVO',stars:'★★★★★',reviews:'48',desc:'A nova versão micronizada da nossa Creatina Monohidratada. Partículas 20x menores garantem dissolução instantânea e maior absorção pelo organismo, sem o residual granulado.',beneficios:['Partículas micronizadas para dissolução instantânea','Maior biodisponibilidade','Sem sabor e sem cheiro','100% pura, zero aditivos'],info:'300g | 100 doses | Dissolve completamente em água, suco ou shake'})">
+        <span class="novo-tag">🔥 Novo</span>
+        <div class="lanc-card-img">🧪</div>
+        <div class="lanc-card-info">
+          <div class="nome">Creatina Micronizada — 300g</div>
+          <div class="descricao">Dissolução instantânea, maior absorção. A evolução da creatina que você já ama.</div>
+          <div class="preco-row">
+            <span class="price-old" style="font-size:12px;color:#9ca3af;text-decoration:line-through;">R$ 99,90</span>
+            <span class="preco-novo">R$ 84,90</span>
+          </div>
+          <button class="btn-lanc-card" (click)="addToCart($event)">Adicionar ao carrinho</button>
+        </div>
+      </div>
+
+      <!-- Card 2 — Novo -->
+      <div class="lanc-card" (click)="abrirProduto({nome:'Pre-Workout Flow Fire — 300g',img:'assets/creatina.png',precoOld:'R$ 149,90',precoNew:'R$ 129,90',badge:'NOVO',stars:'★★★★☆',reviews:'27',desc:'O pré-treino mais poderoso da Flow Sup chegou. Flow Fire combina Cafeína, Beta-Alanina, Citrulina Malato e Taurina em doses efetivas para performance máxima desde o primeiro set.',beneficios:['250mg de Cafeína por dose','6g de Citrulina Malato para pump intenso','Beta-Alanina para resistência muscular','Sem açúcar, sem corante artificial'],info:'300g | 30 doses | Tomar 20-30 min antes do treino | Sabor: Melancia com Menta'})">
+        <span class="novo-tag">🔥 Novo</span>
+        <div class="lanc-card-img">⚡</div>
+        <div class="lanc-card-info">
+          <div class="nome">Pre-Workout Flow Fire — 300g</div>
+          <div class="descricao">Energia, foco e pump. O pré-treino que a comunidade Flow Sup pediu.</div>
+          <div class="preco-row">
+            <span class="price-old" style="font-size:12px;color:#9ca3af;text-decoration:line-through;">R$ 149,90</span>
+            <span class="preco-novo">R$ 129,90</span>
+          </div>
+          <button class="btn-lanc-card" (click)="addToCart($event)">Adicionar ao carrinho</button>
+        </div>
+      </div>
+
+      <!-- Card 3 — Novo -->
+      <div class="lanc-card" (click)="abrirProduto({nome:'Colágeno Verisol® com Vitamina C — 300g',img:'assets/creatina.png',precoOld:'R$ 89,90',precoNew:'R$ 74,90',badge:'NOVO',stars:'★★★★★',reviews:'93',desc:'Colágeno bioativo Verisol® clinicamente testado, combinado com Vitamina C para potencializar a síntese de colágeno endógeno. Benefícios comprovados para pele, articulações e tendões.',beneficios:['Colágeno Verisol® patenteado','Combinado com Vitamina C','Sabor neutro — mistura em qualquer bebida','Estudos clínicos publicados'],info:'300g | 30 doses | Tomar em jejum ou junto às refeições | Sem glúten'})">
+        <span class="novo-tag">✨ Novo</span>
+        <div class="lanc-card-img">💊</div>
+        <div class="lanc-card-info">
+          <div class="nome">Colágeno Verisol® + Vit. C — 300g</div>
+          <div class="descricao">O colágeno com mais evidência científica do mercado, agora na linha Flow Sup.</div>
+          <div class="preco-row">
+            <span class="price-old" style="font-size:12px;color:#9ca3af;text-decoration:line-through;">R$ 89,90</span>
+            <span class="preco-novo">R$ 74,90</span>
+          </div>
+          <button class="btn-lanc-card" (click)="addToCart($event)">Adicionar ao carrinho</button>
+        </div>
+      </div>
+
+      <!-- Card 4 — Em breve -->
+      <div class="lanc-card">
+        <span class="em-breve-tag">Em breve</span>
+        <div class="lanc-card-img" style="background:#f0f0ff;">🌙</div>
+        <div class="lanc-card-info">
+          <div class="nome">Night Recovery Pro — 400g</div>
+          <div class="descricao">Fórmula noturna com Caseína, Magnésio, ZMA e Ashwagandha para recuperação e sono de qualidade.</div>
+          <div class="preco-row">
+            <span class="preco-novo" style="font-size:14px;color:#6366f1;">Disponível em breve</span>
+          </div>
+          <button class="btn-lanc-card desabilitado">Avise-me quando chegar</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Carrinho -->
+  <div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header">
+      <h2>🛒 Carrinho</h2>
+      <button class="close-btn" (click)="toggleCart()">×</button>
+    </div>
+    <div id="cartItems" class="cart-items-list">
+      <p class="empty-cart">Seu carrinho está vazio</p>
+    </div>
+    <div class="cart-summary">
+      <div class="summary-row"><span>Subtotal:</span><span id="subtotal">R$ 0,00</span></div>
+      <div class="summary-row"><span>Total:</span><span id="cartTotal" style="font-weight:700;font-size:16px;">R$ 0,00</span></div>
+      <button class="btn-checkout" (click)="checkout()" style="margin-top:12px;">Finalizar Compra</button>
+      <button class="btn-continue" (click)="toggleCart()" style="margin-top:8px;">Continuar Comprando</button>
+    </div>
+  </div>
+  <div id="cartOverlay" class="cart-overlay" (click)="toggleCart()"></div>
+
+  <!-- Modal de Produto -->
+  <div id="produtoModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.55);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:24px;" (click)="fecharModalFora($event)">
+    <div id="produtoModalBox" style="background:#fff;border-radius:20px;max-width:780px;width:100%;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.25);animation:modalEntrar 0.3s ease;max-height:90vh;overflow-y:auto;">
+      <div style="background:#f5f5f3;display:flex;align-items:center;justify-content:center;padding:32px;min-height:320px;">
+        <img id="modalImg" src="" alt="" style="max-width:100%;max-height:280px;object-fit:contain;">
+      </div>
+      <div style="padding:36px 32px;display:flex;flex-direction:column;gap:16px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+          <span id="modalBadge" style="background:#00e5a0;color:#0a0a0a;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:0.5px;"></span>
+          <button (click)="fecharModal()" style="background:none;border:none;cursor:pointer;font-size:20px;color:#6b7280;line-height:1;padding:4px;">✕</button>
+        </div>
+        <h2 id="modalNome" style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;line-height:1.2;"></h2>
+        <div id="modalStars" style="display:flex;align-items:center;gap:6px;font-size:14px;"></div>
+        <p id="modalDesc" style="font-size:14px;color:#4b5563;line-height:1.6;"></p>
+        <div>
+          <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#374151;margin-bottom:8px;">Benefícios</p>
+          <ul id="modalBeneficios" style="list-style:none;display:flex;flex-direction:column;gap:6px;"></ul>
+        </div>
+        <div style="background:#f5f5f3;border-radius:10px;padding:12px 16px;">
+          <p id="modalInfo" style="font-size:12px;color:#6b7280;"></p>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:4px;">
+          <span id="modalPrecoOld" style="color:#9ca3af;font-size:13px;text-decoration:line-through;"></span>
+          <span id="modalPrecoNew" style="font-size:26px;font-weight:700;color:#0a0a0a;"></span>
+        </div>
+        <button (click)="addToCartModal()" style="width:100%;padding:15px;background:#0a0a0a;color:#fff;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.5px;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='#1a1d24'" onmouseout="this.style.background='#0a0a0a'">
+          Adicionar ao carrinho
+        </button>
+      </div>
+    </div>
+  </div>
+
+

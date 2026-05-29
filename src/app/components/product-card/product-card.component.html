@@ -1,0 +1,19 @@
+<div class="product-card">
+  <div class="product-badge">{{ product.discount }}% OFF</div>
+  <div class="product-img">
+    <div class="product-img-bg"></div>
+    <img [src]="product.image" [alt]="product.name" class="product-img-item">
+  </div>
+  <div class="product-info">
+    <div class="product-name">{{ product.name }}</div>
+    <div class="stars">
+      <span>{{ stars }}</span>
+      <small>({{ product.reviews | number }})</small>
+    </div>
+    <div class="price-row">
+      <span class="price-old">R$ {{ product.oldPrice | number:'1.2-2' }}</span>
+      <span class="price-new">R$ {{ product.price | number:'1.2-2' }}</span>
+    </div>
+    <button class="btn-add" (click)="onAdd()">Adicionar ao carrinho</button>
+  </div>
+</div>

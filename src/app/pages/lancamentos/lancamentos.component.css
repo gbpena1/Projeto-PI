@@ -1,0 +1,246 @@
+/* ── Hero Lançamentos ── */
+.lanc-hero {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1d24 40%, #003d4d 100%);
+  padding: 72px 80px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+.lanc-hero::before {
+  content: 'NEW';
+  position: absolute;
+  right: -20px; top: -40px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 280px;
+  color: rgba(255,255,255,0.03);
+  letter-spacing: 10px;
+  line-height: 1;
+  pointer-events: none;
+}
+.lanc-hero-text { position: relative; z-index: 1; }
+.lanc-hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(0,229,160,0.12);
+  border: 1px solid rgba(0,229,160,0.3);
+  color: #00e5a0;
+  padding: 6px 16px; border-radius: 20px;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.lanc-hero-tag::before {
+  content: '';
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #00e5a0;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50% { opacity:0.5; transform:scale(0.8); }
+}
+.lanc-hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 72px; color: #fff;
+  letter-spacing: 3px; line-height: 1;
+  margin-bottom: 16px;
+}
+.lanc-hero h1 span { color: #00e5a0; }
+.lanc-hero p { color: rgba(255,255,255,0.55); font-size: 16px; line-height: 1.6; max-width: 500px; }
+
+/* ── Destaque principal ── */
+.lanc-destaque {
+  margin: 48px 80px;
+  background: linear-gradient(135deg, #003d4d 0%, #005f6e 100%);
+  border-radius: 24px;
+  padding: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.lanc-destaque::after {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,229,160,0.15) 0%, transparent 70%);
+  right: -100px; bottom: -100px;
+}
+.lanc-destaque-text { position: relative; z-index: 1; }
+.lanc-novo-badge {
+  display: inline-block;
+  background: #00e5a0; color: #0a0a0a;
+  font-size: 11px; font-weight: 800;
+  padding: 4px 14px; border-radius: 20px;
+  letter-spacing: 1px; text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.lanc-destaque h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 52px; color: #fff;
+  letter-spacing: 2px; line-height: 1.1;
+  margin-bottom: 16px;
+}
+.lanc-destaque p {
+  color: rgba(255,255,255,0.65);
+  font-size: 15px; line-height: 1.7; margin-bottom: 28px;
+}
+.lanc-destaque-preco {
+  display: flex; align-items: center; gap: 16px; margin-bottom: 24px;
+}
+.lanc-destaque-preco .preco-novo {
+  font-size: 40px; font-weight: 800; color: #fff;
+}
+.lanc-destaque-preco .preco-velho {
+  font-size: 16px; color: rgba(255,255,255,0.4); text-decoration: line-through;
+}
+.lanc-destaque-preco .preco-badge {
+  background: rgba(0,229,160,0.2); color: #00e5a0;
+  font-size: 13px; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px;
+}
+.btn-lanc {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #00e5a0; color: #0a0a0a;
+  padding: 14px 28px; border-radius: 10px;
+  font-weight: 700; font-size: 14px; letter-spacing: 0.5px;
+  border: none; cursor: pointer; text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-lanc:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,229,160,0.4); }
+.lanc-destaque-img {
+  display: flex; align-items: center; justify-content: center;
+  position: relative; z-index: 1;
+}
+.lanc-destaque-img img {
+  max-height: 320px; max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ── Seção de lançamentos ── */
+.lanc-section { padding: 48px 80px; }
+.lanc-section-titulo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px; letter-spacing: 2px; color: #0a0a0a;
+  margin-bottom: 32px;
+  display: flex; align-items: center; gap: 16px;
+}
+.lanc-section-titulo::after {
+  content: '';
+  flex: 1; height: 2px;
+  background: linear-gradient(90deg, #e5e7eb, transparent);
+}
+
+/* ── Cards de lançamento ── */
+.lanc-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+.lanc-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.12); }
+.lanc-card .novo-tag {
+  position: absolute; top: 12px; left: 12px; z-index: 2;
+  background: #00e5a0; color: #0a0a0a;
+  font-size: 10px; font-weight: 800;
+  padding: 3px 10px; border-radius: 20px;
+  letter-spacing: 1px; text-transform: uppercase;
+}
+.lanc-card .em-breve-tag {
+  position: absolute; top: 12px; left: 12px; z-index: 2;
+  background: #6366f1; color: #fff;
+  font-size: 10px; font-weight: 800;
+  padding: 3px 10px; border-radius: 20px;
+  letter-spacing: 1px; text-transform: uppercase;
+}
+.lanc-card-img {
+  width: 100%; height: 220px;
+  background: #f5f5f3;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 72px;
+}
+.lanc-card-info { padding: 20px; }
+.lanc-card-info .nome {
+  font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  color: #0a0a0a; margin-bottom: 6px; line-height: 1.4;
+}
+.lanc-card-info .descricao {
+  font-size: 12px; color: #6b7280; margin-bottom: 12px; line-height: 1.5;
+}
+.lanc-card-info .preco-row {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 14px;
+}
+.lanc-card-info .preco-novo { font-size: 20px; font-weight: 700; color: #0a0a0a; }
+.btn-lanc-card {
+  width: 100%; padding: 12px;
+  background: #0a0a0a; color: #fff;
+  border: none; border-radius: 8px; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 13px;
+  letter-spacing: 0.5px; transition: all 0.2s;
+}
+.btn-lanc-card:hover { background: #1a1d24; }
+.btn-lanc-card.desabilitado { background: #6366f1; cursor: default; }
+.btn-lanc-card.desabilitado:hover { background: #6366f1; }
+
+/* ── Countdown ── */
+.countdown-bar {
+  background: #0a0a0a;
+  padding: 20px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.countdown-label {
+  font-size: 13px; color: rgba(255,255,255,0.5);
+  letter-spacing: 2px; text-transform: uppercase;
+}
+.countdown-timer { display: flex; align-items: center; gap: 12px; }
+.countdown-unit { text-align: center; }
+.countdown-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px; color: #00e5a0;
+  letter-spacing: 2px; line-height: 1;
+  display: block;
+}
+.countdown-sub {
+  font-size: 10px; color: rgba(255,255,255,0.3);
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.countdown-sep {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px; color: rgba(255,255,255,0.2);
+  padding-bottom: 12px;
+}
+
+/* ── Animação do modal ── */
+@keyframes modalEntrar {
+  from { opacity:0; transform:scale(0.95) translateY(12px); }
+  to { opacity:1; transform:scale(1) translateY(0); }
+}
+
+/* ── Responsivo ── */
+@media (max-width: 900px) {
+  .lanc-hero { padding: 48px 24px; }
+  .lanc-destaque { margin: 32px 24px; padding: 36px 24px; grid-template-columns: 1fr; }
+  .lanc-section { padding: 32px 24px; }
+  .countdown-bar { padding: 20px 24px; }
+}
+@media(max-width:640px) {
+  #produtoModalBox { grid-template-columns: 1fr !important; }
+}

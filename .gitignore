@@ -1,0 +1,30 @@
+﻿# Compiled output
+/dist
+/tmp
+/out-tsc
+
+# Node
+/node_modules
+
+# Angular cache
+/.angular
+
+# IDEs
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Ambientes locais
+.env
+.env.local

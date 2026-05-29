@@ -1,0 +1,41 @@
+footer {
+  background: #111318; color: white; padding: 48px 48px 24px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 32px; padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-col { display: flex; flex-direction: column; gap: 10px; }
+.footer-col h4 { font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+.footer-col a {
+  color: rgba(255,255,255,0.5); text-decoration: none; font-size: 13px; transition: color 0.2s;
+}
+.footer-col a:hover { color: #00e5a0; }
+
+.payment-icons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.payment-icon {
+  background: rgba(255,255,255,0.1); color: white;
+  padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 700;
+}
+
+.footer-actions {
+  display: flex; gap: 12px; padding: 24px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.btn-footer {
+  padding: 10px 20px; border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 24px; color: white; text-decoration: none;
+  font-size: 13px; transition: all 0.2s;
+}
+.btn-footer:hover { background: rgba(255,255,255,0.1); }
+
+.footer-bottom {
+  display: flex; align-items: center; gap: 24px;
+  padding-top: 20px; font-size: 11px; color: rgba(255,255,255,0.3);
+  flex-wrap: wrap;
+}
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif; font-size: 24px;
+  color: white; letter-spacing: 3px; flex-shrink: 0;
+}

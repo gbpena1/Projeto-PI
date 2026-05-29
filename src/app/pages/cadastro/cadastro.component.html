@@ -1,0 +1,104 @@
+<app-navbar></app-navbar>
+ 
+<div class="cadastro-page">
+  <div class="cadastro-split">
+ 
+    <!-- Lado esquerdo: formulário -->
+    <div class="cadastro-form-side">
+      <div class="cadastro-card">
+        <div class="card-header">
+          <span class="card-tag">NOVA CONTA</span>
+          <h1 class="card-title">Criar cadastro</h1>
+          <p class="card-subtitle">Já tem conta? <a routerLink="/login" class="link-accent">Entrar →</a></p>
+        </div>
+ 
+        <form (ngSubmit)="onSubmit()" class="cadastro-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input id="nome" type="text" placeholder="Seu nome" [(ngModel)]="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+              <label for="sobrenome">Sobrenome</label>
+              <input id="sobrenome" type="text" placeholder="Sobrenome" [(ngModel)]="sobrenome" name="sobrenome" required>
+            </div>
+          </div>
+ 
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              <input id="email" type="email" placeholder="seu@email.com" [(ngModel)]="email" name="email" required>
+            </div>
+          </div>
+ 
+          <div class="form-group">
+            <label for="senha">Senha</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              <input id="senha" type="password" placeholder="Crie uma senha forte" [(ngModel)]="senha" name="senha" required>
+            </div>
+          </div>
+ 
+          <div class="form-group">
+            <label for="confirmarSenha">Confirmar senha</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              <input id="confirmarSenha" type="password" placeholder="Repita a senha" [(ngModel)]="confirmarSenha" name="confirmarSenha" required>
+            </div>
+          </div>
+ 
+          <button type="submit" class="btn-submit">
+            Criar minha conta →
+          </button>
+ 
+          <p class="terms-note">
+            Ao se cadastrar, você concorda com os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a> da Flow Sup.
+          </p>
+        </form>
+      </div>
+    </div>
+ 
+    <!-- Lado direito: visual -->
+    <div class="cadastro-visual">
+      <div class="visual-content">
+        <div class="visual-tag">FLOW SUP</div>
+        <h2 class="visual-headline">Comece sua<br>evolução hoje.</h2>
+        <p class="visual-sub">Cadastre-se e tenha acesso a ofertas exclusivas, histórico de pedidos e muito mais.</p>
+        <div class="visual-perks">
+          <div class="perk">
+            <span class="perk-icon">🚀</span>
+            <div>
+              <strong>Entrega rápida</strong>
+              <span>Receba em até 24h para SP</span>
+            </div>
+          </div>
+          <div class="perk">
+            <span class="perk-icon">🎁</span>
+            <div>
+              <strong>Ofertas exclusivas</strong>
+              <span>Descontos para membros cadastrados</span>
+            </div>
+          </div>
+          <div class="perk">
+            <span class="perk-icon">🔒</span>
+            <div>
+              <strong>Compra segura</strong>
+              <span>Dados protegidos com criptografia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="visual-circle"></div>
+    </div>
+ 
+  </div>
+</div>
+ 
+<app-footer></app-footer>

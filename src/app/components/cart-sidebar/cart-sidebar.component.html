@@ -1,0 +1,40 @@
+<div class="cart-sidebar" [class.active]="isOpen">
+  <div class="cart-header">
+    <h2>🛒 Carrinho</h2>
+    <button class="close-btn" (click)="close.emit()">×</button>
+  </div>
+
+  <div class="cart-items-list">
+    @if (cartService.cartItems().length === 0) {
+      <p class="empty-cart">Seu carrinho está vazio</p>
+    } @else {
+      @for (item of cartService.cartItems(); track item.product.id) {
+        <div class="cart-item">
+          <div class="item-details">
+            <div class="item-name">{{ item.product.name }}</div>
+            <div class="item-price">R$ {{ item.product.price | number:'1.2-2' }}</div>
+          </div>
+          <div class="item-actions">
+            <button class="qty-btn" (click)="cartService.changeQty(item.product.id, -1)">−</button>
+            <span class="qty-display">{{ item.quantity }}</span>
+            <button class="qty-btn" (click)="cartService.changeQty(item.product.id, 1)">+</button>
+            <button class="item-remove" (click)="cartService.removeItem(item.product.id)">🗑</button>
+          </div>
+        </div>
+      }
+    }
+  </div>
+
+  <div class="cart-summary">
+    <div class="summary-row">
+      <span>Subtotal:</span>
+      <span>R$ {{ cartService.totalPrice() | number:'1.2-2' }}</span>
+    </div>
+    <div class="summary-row total">
+      <span>Total:</span>
+      <span>R$ {{ cartService.totalPrice() | number:'1.2-2' }}</span>
+    </div>
+    <button class="btn-checkout" (click)="checkout()">Finalizar Compra</button>
+    <button class="btn-continue" (click)="close.emit()">Continuar Comprando</button>
+  </div>
+</div>
