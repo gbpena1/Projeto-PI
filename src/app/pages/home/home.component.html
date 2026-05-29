@@ -6,6 +6,97 @@
     <h1>Experimente uma vez.<br> Confie <span>para sempre.</span></h1>
     <p>Suplementos com qualidade superior para quem leva a saúde a sério.</p>
     <div class="hero-cta">
+<<<<<<< HEAD
+      <a routerLink="/loja" class="btn-primary">Ver Loja →</a>
+      <a routerLink="/lancamentos" class="btn-outline">Lançamentos</a>
+=======
+      <a href="#" class="btn-primary">Ver Loja →</a>
+      <a href="#" class="btn-outline">Lançamentos</a>
+>>>>>>> ca0cdf9cc1dde98dd61f79918fc70b2a7c18f3a9
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="assets/whey.png" alt="Imagem do banner">
+  </div>
+</section>
+
+<!-- Estado de carregamento -->
+@if (loading()) {
+  <div class="loading-state">Carregando produtos...</div>
+}
+
+<!-- Estado de erro -->
+@if (error()) {
+  <div class="error-state">{{ error() }}</div>
+}
+
+<!-- Melhores Ofertas -->
+@if (!loading() && !error()) {
+  <section class="section">
+    <div class="section-title">MELHORES OFERTAS</div>
+    <div class="products-grid">
+      @for (product of offers(); track product.id) {
+        <app-product-card [product]="product" (addToCart)="addToCart($event)"></app-product-card>
+      }
+    </div>
+  </section>
+
+  <!-- Combos -->
+  <section class="section" style="padding-top: 0">
+    <div class="section-title">CONFIRA NOSSOS COMBO</div>
+    <div class="products-grid">
+      @for (product of combos(); track product.id) {
+        <app-product-card [product]="product" (addToCart)="addToCart($event)"></app-product-card>
+      }
+    </div>
+  </section>
+}
+
+<!-- Banner Impacto Positivo -->
+<div class="about-split banner-impacto">
+  <div class="about-left">
+    <div class="banner-tag">IMPACTO POSITIVO</div>
+    <h2>SOMOS UMA EMPRESA<br>PRÓ-PLANETA.</h2>
+<<<<<<< HEAD
+    <a routerLink="/sobre" class="btn-about">SAIBA MAIS →</a>
+=======
+    <a href="#" class="btn-about">SAIBA MAIS →</a>
+>>>>>>> ca0cdf9cc1dde98dd61f79918fc70b2a7c18f3a9
+  </div>
+  <div class="about-right">
+    <img src="assets/people.png" alt="Impacto Positivo">
+  </div>
+</div>
+
+<!-- About Split -->
+<div class="about-split">
+  <div class="about-left">
+    <h2>Saúde poderosa,<br>vida melhor</h2>
+    <p>Nós acreditamos que saúde é um estilo de vida, uma escolha diária.</p>
+<<<<<<< HEAD
+    <a routerLink="/sobre" class="btn-about">SOBRE NÓS →</a>
+=======
+    <a href="#" class="btn-about">SOBRE NÓS →</a>
+>>>>>>> ca0cdf9cc1dde98dd61f79918fc70b2a7c18f3a9
+  </div>
+  <div class="about-right">
+    <img src="assets/run.png" alt="Imagem de corrida">
+  </div>
+</div>
+
+<<<<<<< HEAD
+<app-footer></app-footer>
+=======
+<app-footer></app-footer>
+>>>>>>> ca0cdf9cc1dde98dd61f79918fc70b2a7c18f3a9
+<app-navbar></app-navbar>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Experimente uma vez.<br> Confie <span>para sempre.</span></h1>
+    <p>Suplementos com qualidade superior para quem leva a saúde a sério.</p>
+    <div class="hero-cta">
       <a routerLink="/loja" class="btn-primary">Ver Loja →</a>
       <a routerLink="/lancamentos" class="btn-outline">Lançamentos</a>
     </div>
